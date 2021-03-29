@@ -6,7 +6,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
@@ -19,9 +19,9 @@ dependencies:
   flutter_modular: ^3.0.2+1
   flutter_bloc: ^7.0.0
   equatable: ^2.0.0
-  libserialport:
+  flutter_libserialport:
     git:
-      url: git@github.com:jpnurmi/libserialport.dart.git
+      url: git@github.com:jpnurmi/flutter_libserialport.git
       ref: master
 
 dev_dependencies:

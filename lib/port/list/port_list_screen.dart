@@ -1,22 +1,36 @@
 import 'package:arduino_desktop/dependency.dart';
-import 'package:arduino_desktop/port/list/port_list_bloc.dart';
+import 'package:arduino_desktop/port/list/port_list_dependency.dart';
 
-class PortListScreen extends StatelessWidget {
+class PortListScreen extends StatefulWidget {
+  @override
+  _PortListScreen createState() {
+    return _PortListScreen();
+  }
+}
+
+class _PortListScreen extends State<PortListScreen> {
+  late PortListBloc _bloc;
+
+  @override
+  void initState() {
+    _bloc = Modular.get<PortListBloc>();
+    _bloc.loadPorts();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    var bloc = Modular.get<PortListBloc>();
     return BlocProvider(
-      create: (_) => bloc,
-      child: BlocBuilder<PortListBloc, PortListState>(builder: (_, event) {
-        var str = "data: " + event.count.toString();
+      create: (_) => _bloc,
+      child: BlocBuilder<PortListBloc, PortListState>(builder: (_, state) {
+        var str = "data: " + state.ports.toString();
         return Scaffold(
           floatingActionButton: FloatingActionButton(
-            child: const Text("Add"),
-            onPressed: () => bloc.add(PortListEvent()),
+            child: const Icon(Icons.autorenew),
+            onPressed: _bloc.reloadPorts,
           ),
           appBar: AppBar(
-            title: const Text("Some app"),
+            title: const Text("Port lists"),
           ),
           body: ListView(
             children: [

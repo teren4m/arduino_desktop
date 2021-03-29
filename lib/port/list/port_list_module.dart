@@ -6,7 +6,9 @@ class PortListModule extends Module {
 
   @override
   final List<Bind> binds = [
-    Bind.factory((i) => PortListBloc()),
+    Bind.factory((i) => PortItemMapper()),
+    Bind.factory((i) => PortListInteractor(i.get())),
+    Bind.factory((i) => PortListBloc(i.get())),
   ];
 
   @override
