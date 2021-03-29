@@ -1,0 +1,31 @@
+name: arduino_desktop
+description: A new Flutter application.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  bson:
+    git:
+      url: git@github.com:mongo-dart/bson.git
+      ref: master
+  flutter_modular: ^3.0.2+1
+  flutter_bloc: ^7.0.0
+  libserialport:
+    git:
+      url: git@github.com:jpnurmi/libserialport.dart.git
+      ref: master
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
