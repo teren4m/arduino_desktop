@@ -7,6 +7,6 @@ class AppModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute('/', child: (_, __) => PortListScreen()),
+    ModuleRoute('/', module: PortListModule()),
   ];
 }
