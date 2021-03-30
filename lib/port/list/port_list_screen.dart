@@ -3,12 +3,12 @@ import 'package:arduino_desktop/port/list/port_list_dependency.dart';
 
 class PortListScreen extends StatefulWidget {
   @override
-  _PortListScreen createState() {
-    return _PortListScreen();
+  _PortListScreenState createState() {
+    return _PortListScreenState();
   }
 }
 
-class _PortListScreen extends State<PortListScreen> {
+class _PortListScreenState extends State<PortListScreen> {
   late PortListBloc _bloc;
 
   @override
@@ -23,20 +23,13 @@ class _PortListScreen extends State<PortListScreen> {
     return BlocProvider(
       create: (_) => _bloc,
       child: BlocBuilder<PortListBloc, PortListState>(builder: (_, state) {
-        var str = "data: " + state.ports.toString();
         return Scaffold(
           floatingActionButton: FloatingActionButton(
             child: const Icon(Icons.autorenew),
             onPressed: _bloc.reloadPorts,
           ),
-          appBar: AppBar(
-            title: const Text("Port lists"),
-          ),
-          body: ListView(
-            children: [
-              Text(str),
-            ],
-          ),
+          appBar: PortListAppBar(_bloc),
+          body: PortListBody(_bloc, state.ports),
         );
       }),
     );

@@ -1,15 +1,22 @@
 import 'package:arduino_desktop/dependency.dart';
 
 abstract class PortListEvent extends Equatable {
-  const PortListEvent();
+  final String name;
+
+  const PortListEvent(this.name);
+
+  @override
+  List<Object> get props => [name];
 }
 
 class Reload extends PortListEvent {
-  @override
-  List<Object> get props => ["PortListEventReload"];
+  Reload() : super("PortListEventReload");
 }
 
 class Load extends PortListEvent {
-  @override
-  List<Object> get props => ["PortListEventLoad"];
+  Load() : super("PortListEventLoad");
+}
+
+class OpenSettings extends PortListEvent {
+  OpenSettings() : super("PortListEventLoad");
 }

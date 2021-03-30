@@ -8,12 +8,12 @@ class PortListModule extends Module {
   final List<Bind> binds = [
     Bind.factory((i) => PortItemMapper()),
     Bind.factory((i) => PortListInteractor(i.get())),
-    Bind.factory((i) => PortListBloc(i.get())),
+    Bind.factory((i) => PortListBloc(i.get(), i.get())),
   ];
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute(route.list, child: (_, __) => PortListScreen()),
+    ChildRoute("/", child: (_, __) => PortListScreen()),
   ];
 }
 
