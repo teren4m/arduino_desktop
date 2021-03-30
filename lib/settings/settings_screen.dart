@@ -23,8 +23,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
       create: (_) => bloc,
       child: BlocBuilder<SettingsBloc, SettingsState>(builder: (_, state) {
         return Scaffold(
-          appBar: AppBar(),
-          body: Text("settings"),
+          appBar: AppBar(
+            title: Text("Settings"),
+          ),
+          body: SettingsBody(bloc, state),
         );
       }),
     );

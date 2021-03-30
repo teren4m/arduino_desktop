@@ -16,13 +16,14 @@ dependencies:
     git:
       url: git@github.com:mongo-dart/bson.git
       ref: master
-  flutter_modular: ^3.0.2+1
-  flutter_bloc: ^7.0.0
-  equatable: ^2.0.0
   flutter_libserialport:
     git:
       url: git@github.com:jpnurmi/flutter_libserialport.git
       ref: master
+  flutter_modular: ^3.0.2+1
+  flutter_bloc: ^7.0.0
+  equatable: ^2.0.0
+  shared_preferences: ^2.0.5
 
 dev_dependencies:
   flutter_test:

@@ -11,9 +11,7 @@ class PortListBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: ListView(
-        children: [
-          Text(ports.toString()),
-        ],
+        children: ports.map((e) => PortListItem(e)).toList(),
       ),
     );
   }

@@ -8,6 +8,10 @@ class PortListInteractor {
 
   Future<List<PortItem>> ports() async {
     var ports = SerialPort.availablePorts;
-    return ports.map((e) => portItemMapper.toPortItem(e)).toList();
+    var list = ports.map((e) => portItemMapper.toPortItem(e)).toList();
+    list.addAll(list.toList());
+    list.addAll(list.toList());
+    list.addAll(list.toList());
+    return list;
   }
 }

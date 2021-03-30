@@ -8,3 +8,5 @@ export 'package:flutter_libserialport/flutter_libserialport.dart';
 export 'package:flutter_modular/flutter_modular.dart';
 export 'package:arduino_desktop/theme.dart';
 export 'package:arduino_desktop/routes.dart';
+export 'package:arduino_desktop/base/bloc_event.dart';
+export 'package:shared_preferences/shared_preferences.dart';
