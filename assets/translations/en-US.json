@@ -1,0 +1,10 @@
+{
+  "ports_List": {
+    "title": "Ports list"
+  },
+  "settings": {
+    "title": "Settings",
+    "dark_mode": "Dark mode",
+    "lang": "Language"
+  }
+}

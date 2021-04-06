@@ -6,7 +6,7 @@ class SettingsModule extends Module {
 
   @override
   List<Bind<Object>> get binds => [
-        Bind.factory((i) => SettingsInteractor(i.get())),
+        Bind.factory((i) => SettingsInteractor(i.get(), i.get())),
         Bind.factory((i) => SettingsBloc(i.get())),
       ];
 

@@ -1,7 +1,6 @@
 import 'package:arduino_desktop/dependency.dart';
 
 class ThemeCubit extends Cubit<ThemeData> {
-  /// {@macro brightness_cubit}
   ThemeCubit() : super(_lightTheme);
 
   static final _lightTheme = ThemeData(
@@ -21,5 +20,13 @@ class ThemeCubit extends Cubit<ThemeData> {
   /// Toggles the current brightness between light and dark.
   void toggleTheme() {
     emit(state.brightness == Brightness.dark ? _lightTheme : _darkTheme);
+  }
+
+  void setupDarkTheme() {
+    emit(_darkTheme);
+  }
+
+  void setupLightTheme() {
+    emit(_lightTheme);
   }
 }

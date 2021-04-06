@@ -1,34 +1,16 @@
 import 'package:arduino_desktop/dependency.dart';
 import 'package:arduino_desktop/settings/settings_dependency.dart';
 
-class SettingsScreen extends StatefulWidget {
+class SettingsScreen extends BaseScreen<SettingsBloc, SettingsState> {
   @override
-  _SettingsScreenState createState() {
-    return _SettingsScreenState();
-  }
-}
-
-class _SettingsScreenState extends State<SettingsScreen> {
-  late final SettingsBloc bloc;
-
-  @override
-  void initState() {
-    bloc = Modular.get();
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => bloc,
-      child: BlocBuilder<SettingsBloc, SettingsState>(builder: (_, state) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text("Settings"),
-          ),
-          body: SettingsBody(bloc, state),
-        );
-      }),
+  PreferredSizeWidget? createAppBar(SettingsBloc bloc, SettingsState state) {
+    return AppBar(
+      title: text(path: Translations.settings.title),
     );
+  }
+
+  @override
+  Widget? createBody(SettingsBloc bloc, SettingsState state) {
+    return SettingsBody(bloc, state);
   }
 }

@@ -16,10 +16,16 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
     if (event is DarkModeEvent) {
       var isDarkMode = await interactor.toggleDarkMode();
       yield state.copy(isDarkModeEnable: isDarkMode);
+    } else if (event is LangEvent) {
+      interactor.changeLang(event.item.local);
     }
   }
 
   void toggleDarkMode() {
     add(DarkModeEvent());
+  }
+
+  void lang(LangItem lang) async {
+    add(LangEvent(lang));
   }
 }

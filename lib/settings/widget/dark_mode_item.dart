@@ -17,7 +17,7 @@ class DarkModeItem extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Dark Mode"),
+              text(path: Translations.settings.darkMode),
               Switch(
                 value: isChecked,
                 onChanged: null,

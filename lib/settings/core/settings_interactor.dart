@@ -1,20 +1,22 @@
 import 'package:arduino_desktop/dependency.dart';
+import 'package:arduino_desktop/translation/translation_manager.dart';
 
 class SettingsInteractor {
-  final ThemeCubit theme;
+  final Settings settings;
+  final TranslationManager translationManager;
 
-  const SettingsInteractor(this.theme);
+  const SettingsInteractor(this.settings, this.translationManager);
 
-  Future<bool> toggleDarkMode() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool isDarkMode = (prefs.getBool('darkMode') ?? false);
-    prefs.setBool('darkMode', !isDarkMode);
-    theme.toggleTheme();
-    return !isDarkMode;
+  Future toggleDarkMode() async {
+    await settings.toggleDarkMode();
+    return await settings.isDarkMode();
   }
 
-  Future<bool> isDarkMode() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getBool('darkMode') ?? false;
+  Future<bool> isDarkMode() {
+    return settings.isDarkMode();
+  }
+
+  Future changeLang(String lang) async {
+    translationManager.updateLanguage(lang);
   }
 }

@@ -5,7 +5,9 @@ class PortListBloc extends Bloc<PortListEvent, PortListState> {
   final PortListInteractor interactor;
   final Routes routes;
 
-  PortListBloc(this.interactor, this.routes) : super(PortListState.empty());
+  PortListBloc(this.interactor, this.routes) : super(PortListState.empty()) {
+    interactor.ports().then((x) => emit(PortListState(x)));
+  }
 
   @override
   Stream<PortListState> mapEventToState(PortListEvent event) async* {

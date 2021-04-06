@@ -10,7 +10,10 @@ class SettingsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: [DarkModeItem(bloc, state.isDarkModeEnable)],
+      children: [
+        DarkModeItem(bloc, state.isDarkModeEnable),
+        LangChooserItem(bloc),
+      ],
     );
   }
 }
