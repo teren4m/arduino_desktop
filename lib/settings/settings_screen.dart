@@ -5,7 +5,7 @@ class SettingsScreen extends BaseScreen<SettingsBloc, SettingsState> {
   @override
   PreferredSizeWidget? createAppBar(SettingsBloc bloc, SettingsState state) {
     return AppBar(
-      title: text(path: Translations.settings.title),
+      title: text(Translations.settings.title),
     );
   }
 

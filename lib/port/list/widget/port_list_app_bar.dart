@@ -4,7 +4,7 @@ import 'package:arduino_desktop/port/list/port_list_dependency.dart';
 class PortListAppBar extends AppBar {
   PortListAppBar(PortListBloc bloc)
       : super(
-          title: text(path: Translations.portList.title),
+          title: text(Translations.portList.title),
           actions: [
             Ink(
               decoration: const ShapeDecoration(

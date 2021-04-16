@@ -27,12 +27,14 @@ class BaseScreen<B extends Bloc<dynamic, S>, S> extends StatefulWidget {
 
 class _BaseScreenState<B extends Bloc<dynamic, S>, S> extends State<BaseScreen> {
   late B _bloc;
+  late ThemeCubit theme;
 
   _BaseScreenState();
 
   @override
   void initState() {
     _bloc = Modular.get();
+    theme = Modular.get();
     super.initState();
   }
 
@@ -41,13 +43,18 @@ class _BaseScreenState<B extends Bloc<dynamic, S>, S> extends State<BaseScreen> 
     return BlocProvider(
       create: (_) => _bloc,
       child: BlocBuilder<B, S>(builder: (_, state) {
-        return TranslationWidget(builder: () {
-        return Scaffold(
-          floatingActionButton: widget.createFloatingButton(_bloc, state),
-          appBar: widget.createAppBar(_bloc, state),
-          body: widget.createBody(_bloc, state),
+        return ThemeWidget(
+          builder: () {
+            return TranslationWidget(builder: () {
+              return Scaffold(
+                floatingActionButton: widget.createFloatingButton(_bloc, state),
+                appBar: widget.createAppBar(_bloc, state),
+                body: widget.createBody(_bloc, state),
+              );
+            });
+          },
+          theme: theme,
         );
-        });
       }),
     );
   }

@@ -15,7 +15,7 @@ class LangChooserItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          text(path: Translations.settings.lang),
+          text(Translations.settings.lang),
           DropdownButton<LangItem>(
             items: localesList.map((LangItem value) {
               return new DropdownMenuItem(

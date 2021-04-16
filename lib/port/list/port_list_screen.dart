@@ -4,7 +4,7 @@ import 'package:arduino_desktop/port/list/port_list_dependency.dart';
 class PortListScreen extends BaseScreen<PortListBloc, PortListState> {
   @override
   Widget? createBody(PortListBloc bloc, PortListState state) {
-    return PortListBody(bloc, state.ports);
+    return PortListBody(bloc, state.ports, Modular.get());
   }
 
   @override

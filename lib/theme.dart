@@ -30,3 +30,31 @@ class ThemeCubit extends Cubit<ThemeData> {
     emit(_lightTheme);
   }
 }
+
+typedef ThemeWidgetBuilder = Widget Function();
+
+class ThemeWidget extends StatefulWidget {
+  final ThemeWidgetBuilder builder;
+  final ThemeCubit theme;
+
+  const ThemeWidget({required this.theme, required this.builder});
+
+  @override
+  State<StatefulWidget> createState() {
+    return _ThemeWidgetState();
+  }
+}
+
+class _ThemeWidgetState extends State<ThemeWidget> {
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      stream: widget.theme.stream,
+      builder: (_, __) {
+        return widget.builder();
+      },
+    );
+  }
+}
+

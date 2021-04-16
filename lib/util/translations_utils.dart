@@ -1,9 +1,7 @@
 import 'package:arduino_desktop/dependency.dart';
 
-Text text({
-  String path = "",
-}) {
-  return Text(path).tr();
+Text text(String text,) {
+  return Text(text).tr();
 }
 
 class Translations {
