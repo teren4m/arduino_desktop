@@ -16,6 +16,8 @@ class PortListBloc extends Bloc<PortListEvent, PortListState> {
       yield PortListState(ports);
     } else if (event is OpenSettings) {
       routes.openSettings();
+    } else if(event is OpenInfo){
+      routes.openInfo(event.portItem);
     }
   }
 
@@ -29,5 +31,9 @@ class PortListBloc extends Bloc<PortListEvent, PortListState> {
 
   void openSettings() {
     add(OpenSettings());
+  }
+
+  void openInfo(PortItem item){
+    add(OpenInfo(item));
   }
 }

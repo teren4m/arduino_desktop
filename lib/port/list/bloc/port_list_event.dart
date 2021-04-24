@@ -1,4 +1,5 @@
 import 'package:arduino_desktop/dependency.dart';
+import 'package:arduino_desktop/port/list/bloc/model/port_item.dart';
 
 abstract class PortListEvent extends Equatable {
   final String name;
@@ -18,5 +19,10 @@ class Load extends PortListEvent {
 }
 
 class OpenSettings extends PortListEvent {
-  OpenSettings() : super("PortListEventLoad");
+  OpenSettings() : super("OpenSettings");
+}
+
+class OpenInfo extends PortListEvent {
+  final PortItem portItem;
+  const OpenInfo(this.portItem) : super("OpenInfo");
 }

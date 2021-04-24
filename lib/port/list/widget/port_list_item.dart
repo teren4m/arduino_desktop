@@ -25,7 +25,7 @@ class PortListItem extends StatelessWidget {
                   text(item.description),
                   IconButton(
                     icon: const Icon(Icons.info),
-                    onPressed: () {},
+                    onPressed: () =>  bloc.openInfo(item),
                   ),
                 ],
               ),
