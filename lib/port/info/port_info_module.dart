@@ -5,8 +5,7 @@ class PortInfoModule extends Module {
   static var route = const Route();
 
   @override
-  final List<Bind> binds = [
-  ];
+  final List<Bind> binds = [];
 
   @override
   final List<ModularRoute> routes = [

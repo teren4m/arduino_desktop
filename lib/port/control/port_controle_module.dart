@@ -5,7 +5,10 @@ class PortControlModule extends Module {
   static var route = const Route();
 
   @override
-  final List<Bind> binds = [];
+  final List<Bind> binds = [
+    Bind.factory((i) => PortControlInteractor()),
+    Bind.factory((i) => PortControlBloc(i.get())),
+  ];
 
   @override
   final List<ModularRoute> routes = [
