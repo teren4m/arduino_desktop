@@ -15,3 +15,4 @@ export 'package:easy_localization/easy_localization.dart';
 export 'package:arduino_desktop/util/translations_utils.dart';
 export 'package:arduino_desktop/translation/translation_widget.dart';
 export 'package:arduino_desktop/base/base_screen.dart';
+export 'package:arduino_desktop/base/simple_screen.dart';

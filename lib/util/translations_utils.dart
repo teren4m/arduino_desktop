@@ -6,6 +6,7 @@ Text text(String text,) {
 
 class Translations {
   static const portList = PortListSection();
+  static const portInfo = PortInfoSection();
   static const settings = SettingsSection();
 }
 
@@ -13,6 +14,21 @@ class PortListSection {
   final String title = "ports_List.title";
 
   const PortListSection();
+}
+
+class PortInfoSection {
+  final String description = "ports_info.description";
+  final String transport = "ports_info.transport";
+  final String busNumber = "ports_info.busNumber";
+  final String deviceNumber = "ports_info.deviceNumber";
+  final String vendorId = "ports_info.vendorId";
+  final String productId = "ports_info.productId";
+  final String manufacturer = "ports_info.manufacturer";
+  final String productName = "ports_info.productName";
+  final String serialNumber = "ports_info.serialNumber";
+  final String macAddress = "ports_info.macAddress";
+
+  const PortInfoSection();
 }
 
 class SettingsSection {

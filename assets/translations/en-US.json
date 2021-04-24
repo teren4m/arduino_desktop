@@ -2,6 +2,18 @@
   "ports_List": {
     "title": "Ports list"
   },
+  "ports_info": {
+    "description": "Description",
+    "transport": "Transport",
+    "busNumber": "Bus Number",
+    "deviceNumber": "Device Number",
+    "vendorId": "Vendor Id",
+    "productId": "Product Id",
+    "manufacturer": "Manufacturer",
+    "productName": "Product Name",
+    "serialNumber": "SerialNumber",
+    "macAddress": "Mac Address"
+  },
   "settings": {
     "title": "Settings",
     "dark_mode": "Dark mode",
