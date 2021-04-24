@@ -24,5 +24,12 @@ class OpenSettings extends PortListEvent {
 
 class OpenInfo extends PortListEvent {
   final PortItem portItem;
+
   const OpenInfo(this.portItem) : super("OpenInfo");
+}
+
+class OpenControl extends PortListEvent {
+  final PortItem portItem;
+
+  const OpenControl(this.portItem) : super("OpenControl");
 }

@@ -10,13 +10,14 @@ class PortListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: InkWell(
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-          child: Container(
-            color: theme.state.backgroundColor,
-            height: 100,
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      child: Container(
+        height: 100,
+        child: Material(
+          color: theme.state.backgroundColor,
+          child: InkWell(
+            onTap: () => bloc.openControl(item),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Row(
@@ -25,7 +26,7 @@ class PortListItem extends StatelessWidget {
                   text(item.description),
                   IconButton(
                     icon: const Icon(Icons.info),
-                    onPressed: () =>  bloc.openInfo(item),
+                    onPressed: () => bloc.openInfo(item),
                   ),
                 ],
               ),

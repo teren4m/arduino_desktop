@@ -5,7 +5,7 @@ import 'package:arduino_desktop/port/list/port_list_dependency.dart';
 class PortInfoScreen extends SimpleScreen {
   final PortItem item;
 
-  PortInfoScreen(this.item);
+  const PortInfoScreen(this.item);
 
   @override
   PreferredSizeWidget? createAppBar(ThemeCubit theme) {
