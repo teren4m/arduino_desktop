@@ -9,6 +9,20 @@ class PortControlBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("fdfv");
+    return Column(
+      children: [
+        TextButton(
+          child: text(state.connect ? Translations.portControl.connect : Translations.portControl.disconnect),
+          onPressed: () {
+            if (state.connect) {
+              bloc.connect();
+            } else {
+              bloc.disconnect();
+            }
+          },
+        ),
+        Text(state.serialText)
+      ],
+    );
   }
 }

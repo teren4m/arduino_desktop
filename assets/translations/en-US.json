@@ -2,6 +2,10 @@
   "ports_List": {
     "title": "Ports list"
   },
+  "ports_control": {
+    "connect": "Connect",
+    "disconnect": "Disconnect"
+  },
   "ports_info": {
     "description": "Description",
     "transport": "Transport",
